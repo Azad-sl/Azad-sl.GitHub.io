@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://Azad-sl.GitHub.io</id>
+    <title>Azad&apos;s Space</title>
+    <updated>2022-10-14T07:05:59.068Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://Azad-sl.GitHub.io"/>
+    <link rel="self" href="https://Azad-sl.GitHub.io/atom.xml"/>
+    <subtitle>殖殖其庭，有觉其楹。哙哙其正，哕哕其冥。</subtitle>
+    <logo>https://Azad-sl.GitHub.io/images/avatar.png</logo>
+    <icon>https://Azad-sl.GitHub.io/favicon.ico</icon>
+    <rights>All rights reserved 2022, Azad&apos;s Space</rights>
+    <entry>
+        <title type="html"><![CDATA[Valine评论提醒+后台管理]]></title>
+        <id>https://Azad-sl.GitHub.io/002/</id>
+        <link href="https://Azad-sl.GitHub.io/002/">
+        </link>
+        <updated>2022-10-13T12:16:43.000Z</updated>
+        <content type="html"><![CDATA[<p>有了评论当然就要设置一下提醒了（不然每次都得去后台瞟一眼有没有人评论），Valine评论开启邮箱提醒+后台管理网上已经有不少详细的教程，比如： <a href="https://blog.csdn.net/u012208219/article/details/106883083">Valine评论之Valine-admin配置攻略</a>、<a href="https://blog.csdn.net/qq_45428737/article/details/105574603?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522166556912916782395342978%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&amp;request_id=166556912916782395342978&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-2-105574603-null-null.142%5Ev53%5Epc_rank_34_1,201%5Ev3%5Econtrol_1&amp;utm_term=Valine%E8%AF%84%E8%AE%BA%E9%80%9A%E7%9F%A5&amp;spm=1018.2226.3001.4187">博客使用valine评论开启邮件提醒</a>、<a href="https://cloud.tencent.com/developer/article/1611287">Valine评论系统邮件提醒</a>、<a href="https://cloud.tencent.com/developer/article/2122077">valine评论设置邮件通知和valine-admin后台管理</a>，有的时间隔得挺久，但具体步骤大差不差。简单记录一下遇到的两个最大的坑：</p>
+<h3 id="1-git地址的nodejs版本问题">1. Git地址的<code>node.js</code>版本问题</h3>
+<p>大部分教程里提供的Git地址部署后都出现了错误，看了下错误码应该是<code>node.js</code>版本的问题，搜了一下果然如此，开发<code>valine-admin</code>的<a href="https://github.com/hongweifuture/Valine-Admin">作者</a>配置文件<code>package.json</code>中<code>node.js</code>版本是<code>6.x</code>，需要设置为<code>12.x</code>版本。可以<code>fork</code>作者的仓库后在自己的仓库中修改。找到这一行：</p>
+<pre><code class="language-JS">&quot;engines&quot;: {
+    &quot;node&quot;: &quot;6.x&quot;
+  }
+}
+</code></pre>
+<p>改为：</p>
+<pre><code class="language-JS">&quot;engines&quot;: {
+    &quot;node&quot;: &quot;12.x&quot;
+  }
+}
+</code></pre>
+<p>再在Git部署中填入自己<code>fork</code>后的地址重新部署即可。</p>
+<h3 id="2-leancloud评论管理登录问题">2. LeanCloud评论管理登录问题</h3>
+<p>绑定一个二级域名，作为后台管理（记得添加到安全域名），使用<code>_user</code>中添加的账号密码（添加<code>用户</code>、<code>密码</code>、<code>邮箱</code>三项），登录了几十次都登不上去，又添加了几个账号密码，仍然一样，最后没办法了随意输入，结果发现：</p>
+<p class="warn"><big><b>用户名</b>不填用户名，填<code>邮箱</code>！<code>邮箱</code>！<code>邮箱</code>！</big></p>
+<figure data-type="image" tabindex="1"><img src="http://tuchuang.azad.asia/imgs/2022/10/b57a41f43a6f007e.png" alt="" loading="lazy"></figure>
+<BR>
+<hr>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[换了个新主题]]></title>
+        <id>https://Azad-sl.GitHub.io/bitcron/</id>
+        <link href="https://Azad-sl.GitHub.io/bitcron/">
+        </link>
+        <updated>2022-10-12T08:00:17.000Z</updated>
+        <content type="html"><![CDATA[<p>原先的主题<code>Chic</code>被我改得出了不少问题😅，无法很好地嵌入<code>Valine</code>评论，而<code>Gitalk</code>本身有一定的隐私泄露风险和使用门槛，评论仓库管理起来也比较麻烦（<s>说得好像有人评论似的🤡</s>）；同时主题字体也感觉不大适配，暂时打包做了备份，等<a href="https://blog.itjoker.cn/">原作者</a>更新，或者什么时候我怀旧了再来缝缝补补吧。</p>
+<p>放个首页纪念一下。</p>
+<figure data-type="image" tabindex="1"><img src="http://tuchuang.azad.asia/imgs/2022/10/aca1c59cfce4d3dd.png" alt="" loading="lazy"></figure>
+<hr>
+<h2 id="新主题"><a href="https://github.com/yuxqiu/bitcron-pro">新主题<code>Bitcron-pro</code> </a></h2>
+<p>新主题<code>Bitcron-pro</code>，同样的简洁不简单。类似word的A4纸布局更令人专注于文字本身，适合简简单单码字，手机、电脑的字体适配也比较舒服，同时支持图片点击放大、繁简转换和访问统计等也深得我心。</p>
+<h3 id="添加valine评论">添加<code>Valine</code>评论</h3>
+<p>原生<code>Bitchon</code>评论仅支持<code>Gitalk</code>和<code>Disqus</code>，转而寻向<code>Valine</code>评论。研究一番后找到两个方法：</p>
+<ol>
+<li>
+<p>按照<a href="https://valine.js.org/quickstart.html">官方文档</a>注册<code>Leancloud应用</code>，获取<code>APP ID</code> 和 <code>APP KEY</code>后，直接将代码插入主题文件夹<code>templates</code>里的<code>post.ejs</code>，添加安全域名，即大功告成。</p>
+<ul>
+<li>放于<code>&lt;/head&gt;</code>前：</li>
+</ul>
+<pre><code class="language-html">&lt;script src='//unpkg.com/valine/dist/Valine.min.js'&gt;&lt;/script&gt;
+</code></pre>
+<ul>
+<li>放于<code>&lt;body&gt;</code>内gitalk和disqus的<code>&lt;div&gt;</code>块内即可：</li>
+</ul>
+<pre><code class="language-html">&lt;div id=&quot;vcomments&quot;&gt;&lt;/div&gt;
+    &lt;script&gt;
+        new Valine({
+            el: '#vcomments',
+            appId: '******************',
+            appKey: '*******************'
+        })
+    &lt;/script&gt;
+
+</code></pre>
+</li>
+<li>
+<p>直接修改文件目录<code>templates</code> -&gt; <code>_blocks</code>内的<code>gitalk.ejs</code>。将里面的内容替换为：</p>
+<pre><code class="language-html">&lt;div id=&quot;comment&quot;&gt;&lt;/div&gt;
+&lt;!--Leancloud 操作库:--&gt;
+&lt;script src=&quot;//cdn1.lncld.net/static/js/3.6.1/av-min.js&quot;&gt;&lt;/script&gt;
+&lt;!--Valine 的代码库--&gt;
+&lt;script src=&quot;//cdn.jsdelivr.net/npm/valine@1.4.4/dist/Valine.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+    new Valine({
+        el:'#comment',
+        appId: '**********************',
+        appKey: '**************************',
+        placeholder: 'Just Go Go',
+        avatar:''
+    });
+&lt;/script&gt;
+
+</code></pre>
+<ul>
+<li>最后记得在<code>Gridea</code>的<code>远程</code>-&gt;<code>评论配置</code>中开启<code>Gitalk</code>并单击<code>保存</code> （其他信息不需填写）。</li>
+</ul>
+</li>
+</ol>
+<figure data-type="image" tabindex="2"><img src="http://tuchuang.azad.asia/imgs/2022/10/84509c43f3483b62.png" alt="" loading="lazy"></figure>
+<h3 id="添加友链">添加友链</h3>
+<p><code>Bitchon</code>的作者暂时不考虑添加友链，于是自己又瞎鼓捣了一天，东拼西凑了个<code>friends.ejs</code>，还好效果看起来还不赖。</p>
+<BR>
+<hr>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[两个地理图片网站下载接口]]></title>
+        <id>https://Azad-sl.GitHub.io/012/</id>
+        <link href="https://Azad-sl.GitHub.io/012/">
+        </link>
+        <updated>2022-10-04T11:25:23.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>中国地质调查局的两个网站，图片本身是公开的，通过网页分析找到两个直接下载的接口，省去了分片下载再合成的麻烦。</p>
+</blockquote>
+<BR>
+<ol>
+<li><a href="https://geocloudproducts.cgs.gov.cn/dzzlfw/idx/indexList.do">“互联网+”地质信息协同服务系统 · 地质图</a></li>
+</ol>
+<ul>
+<li>
+<p>下载接口：</p>
+<p>https://geocloudproducts.cgs.gov.cn/dzxxcp/admin_file/core/file/detailOnLine.do?id=<span style='color:red'>此处输入源网址id</span>&amp;pstatus=img&amp;path=</p>
+</li>
+<li>
+<p>举例：</p>
+<ul>
+<li>
+<p>eg：</p>
+<p>https://geocloudproducts.cgs.gov.cn/dzxxcp/admin_file/core/file/toView.do?id=0a1415db5d9545ab9a726380def8dc41&amp;t=deepzoom&amp;providerid=4028803a518fe41c0151a47891240027</p>
+</li>
+<li>
+<p><strong><code>id</code></strong> 即中间的id= <strong>0a1415db5d9545ab9a726380def8dc41</strong></p>
+</li>
+<li>
+<p>下载地址为：</p>
+<p>https://geocloudproducts.cgs.gov.cn/dzxxcp/admin_file/core/file/detailOnLine.do?id=0a1415db5d9545ab9a726380def8dc41&amp;pstatus=img&amp;path=</p>
+</li>
+</ul>
+</li>
+</ul>
+<figure data-type="image" tabindex="1"><a href="http://tuchuang.azad.asia/imgs/2022/10/4fd2decac1a5bed3.png"><img src="http://tuchuang.azad.asia/imgs/2022/10/4fd2decac1a5bed3.png" alt="" loading="lazy"></a></figure>
+<BR>
+<BR>
+<ol start="2">
+<li><a href="https://clouddisk.cgs.gov.cn/zoom/">地质云</a></li>
+</ol>
+<ul>
+<li>
+<p>下载接口：</p>
+<p>https://clouddisk.cgs.gov.cn/index.php?api/download&amp;ticket4api=7a6875616e74697573657230312f3132318aad99e75897c0d6fa49fe248fc6fa8d&amp;username=zhuantiuser01&amp;is_file_array=0&amp;path_api=<span style='color:red'>此处输入图片文件名</span></p>
+</li>
+<li>
+<p>举例：</p>
+<ul>
+<li>
+<p>eg：</p>
+<p>https://clouddisk.cgs.gov.cn/zoom/index.php?ticket4api=7a6875616e74697573657230312f3132318aad99e75897c0d6fa49fe248fc6fa8d&amp;username=zhuantiuser01&amp;file_path=/自然资源图件专题/9地质公园/中国重要地质遗迹分布图.jpg</p>
+</li>
+<li>
+<p><strong><code>图片文件名</code></strong> 即 <strong>自然资源图件专题/9地质公园/中国重要地质遗迹分布图.jpg</strong></p>
+</li>
+<li>
+<p>下载地址为：</p>
+<p>https://clouddisk.cgs.gov.cn/index.php?api/download&amp;ticket4api=7a6875616e74697573657230312f3132318aad99e75897c0d6fa49fe248fc6fa8d&amp;username=zhuantiuser01&amp;is_file_array=0&amp;path_api=自然资源图件专题/9地质公园/中国重要地质遗迹分布图.jpg</p>
+</li>
+</ul>
+</li>
+</ul>
+<figure data-type="image" tabindex="2"><a href="http://tuchuang.azad.asia/imgs/2022/10/210d30b154f82fe3.png"><img src="http://tuchuang.azad.asia/imgs/2022/10/210d30b154f82fe3.png" alt="" loading="lazy"></a></figure>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[每天60s新闻早报]]></title>
+        <id>https://Azad-sl.GitHub.io/dailynews/</id>
+        <link href="https://Azad-sl.GitHub.io/dailynews/">
+        </link>
+        <updated>2022-10-02T03:58:35.000Z</updated>
+        <content type="html"><![CDATA[<img class="aligncenter" src="https://api.03c3.cn/zb/" alt="每日早报"  width="150%"/>]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[备案成功🎉]]></title>
+        <id>https://Azad-sl.GitHub.io/beian/</id>
+        <link href="https://Azad-sl.GitHub.io/beian/">
+        </link>
+        <updated>2022-10-01T08:13:14.000Z</updated>
+        <content type="html"><![CDATA[<p><font size="3">折腾了快一个月，终于成功完成 <strong>ICP备案+公安备案</strong><sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>🎉🎉🎉。以后咱也算是境内合法正规网站了😁 </font></p>
+<figure data-type="image" tabindex="1"><img src="https://my-images-1303836580.cos.ap-beijing.myqcloud.com/202210011539691.png" alt="微信图片_20221001115943" loading="lazy"></figure>
+<br>
+<p><font size="3">简单记录一下踩过的坑：</font></p>
+<br>
+<h2 id="工信部的icp备案">工信部的ICP备案<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></h2>
+<ol>
+<li>
+<p><font size="3">在腾讯云填写域名和备案资料后（个人的话负责人都填自己），一般会在1 - 2个工作日左右进行备案资料审核，会有腾讯客服电话联系。</font></p>
+</li>
+<li>
+<p><font size="3"> 网站名称非常重要，之前的 <strong>“<code>漫步云端</code>”</strong> 被客服告知与某影视、某公司重名（黑人问号脸.jpg），几番拉扯改为 <strong>“<code>我的互联网日志</code>”</strong>（泯然众人矣）。客服一般会建议网站名称与网站内容保持一致，如果实在不知道取什么名字，可以让客服帮忙取一个。</font></p>
+<blockquote>
+<p>❗ 注意： <strong>“<code>个人博客</code>”</strong> 、 <strong>“<code>快乐每一天</code>”</strong> 等等过于常见的网站名称已被列入黑名单。</p>
+</blockquote>
+</li>
+<li>
+<p><font size="3">个人网站一般不需 <strong><code>前置审批</code></strong> ：拟从事新闻、出版、药品和医疗器械、文化、广播电影电视节目、网络游戏等互联网信息服务，需要进行前置审批，才能通过备案。</font></p>
+</li>
+<li>
+<p><font size="3">腾讯云初审通过后会提交给通信管理局审批，工信部的ICP备案等待时间比较长，广东省内一般ICP备案会在15天内通过，并且发送短信通知，同时会要求30天内去进行公安备案。</font></p>
+</li>
+</ol>
+<br>
+<p><font size="3">附：<strong>网站备案号底部居中并链接到工信部的简单代码</strong></font></p>
+<pre><code class="language-html">&lt;div id=&quot;master&quot; &gt;
+    &lt;a href=&quot;http://beian.miit.gov.cn/&quot;&gt;&lt;center&gt;你的备案号&lt;/center&gt;&lt;/a&gt;
+ &lt;/div&gt;
+
+&lt;style type=&quot;text/css&quot; &gt;
+ #master {
+       position:absolute;
+      left:50%;
+      bottom:0;
+      text-align :center;
+        }
+ &lt;/style&gt;
+</code></pre>
+<br>
+<h2 id="公安备案">公安备案<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup></h2>
+<ol>
+<li><font size="3">登录<a href="https://www.beian.gov.cn/portal/index.do#">全国互联网安全管理服务平台</a>，点击 <strong><code>联网备案登录</code></strong> </font></li>
+</ol>
+<figure data-type="image" tabindex="2"><img src="https://my-images-1303836580.cos.ap-beijing.myqcloud.com/202210011456570.png" alt="img" loading="lazy"></figure>
+<br>
+<ol start="2">
+<li>
+<p><font size="3">登录后点击 <strong><code>主页</code></strong>，当开办主体还没添加的时候会弹框让你去填写</font></p>
+<blockquote>
+<p>具体内容可参照文末文档 <strong>互联网站安全服务平台操作指南.doc</strong> 、 <strong>全国公安机关互联网站安全服务平台备案操作指南.docx</strong></p>
+</blockquote>
+</li>
+<li>
+<p><font size="3"><strong><code>*是否提供互联网交互服务</code></strong> 慎重考虑。交互式备案看你选择的服务需要不少额外的操作。</font></p>
+<blockquote>
+<p>一般情况下，个人博客不开放留言或者留言仅留言者和管理员可见，选 <strong>非交互式</strong> 即可。</p>
+</blockquote>
+</li>
+<li>
+<p><font size="3">关于 <strong><code>*网络接入服务商</code></strong> </font></p>
+<ul>
+<li>
+<p>若主机是在 <strong>阿里云</strong> 购买，办理公安备案的域名是通过 <strong>阿里云</strong> 在工信部备案，阿里云信息如下：</p>
+<p>网络接入服务商名称：<em>阿里云计算有限公司</em></p>
+<p>网络接入商所属区域：<em>浙江省杭州市滨江区</em></p>
+<p>接入方式：<em>租赁虚拟空间</em></p>
+<p>接入服务商电话：<em>95187</em></p>
+<p>接入服务商组织机构代码/接入商编码：<em>673959654</em></p>
+</li>
+<li>
+<p>若主机是在 <strong>腾讯云</strong> 购买，办理公安备案的域名是通过 <strong>腾讯云</strong> 在工信部备案，腾讯云信息如下：</p>
+<p>网络接入服务商名称：<em>腾讯云计算（北京）有限责任公司</em></p>
+<p>网络接入商所属区域：<em>北京市市辖区海淀区</em></p>
+<p>接入方式：<em>租赁主机</em></p>
+<p>接入服务商电话：<em>95716</em></p>
+<p>接入服务商组织机构代码/接入商编码：<em>56365494-8（三证合一号码：911101085636549482）</em></p>
+</li>
+<li>
+<p>若主机是在 <strong>华为云</strong> 购买，办理公安备案的域名是通过 <strong>华为云</strong> 在工信部备案，华为云信息如下：</p>
+<p>网络接入服务商名称：<em>华为软件技术有限公司</em></p>
+<p>网络接入商所属区域：<em>江苏省南京市雨花台区</em></p>
+<p>接入方式：<em>租赁虚拟空间</em></p>
+<p>接入服务商电话：<em>4000-955-988</em></p>
+</li>
+<li>
+<p>若主机是在 <strong>百度云</strong> 购买，办理公安备案的域名是通过 百度云 在工信部备案，百度云信息如下：</p>
+<p>网络接入服务商名称：<em>北京百度网讯科技有限公司</em></p>
+<p>网络接入商所属区域：<em>北京市市辖区海淀区</em></p>
+<p>接入方式：<em>若购买的是虚拟主机，请选择“租赁虚拟空间”；若购买的是云服务器，请选择“托管主机”。</em></p>
+</li>
+</ul>
+</li>
+<li>
+<p><font size="3">关于 <strong><code>*域名注册服务商</code></strong> </font></p>
+<ul>
+<li>
+<p>办理公安备案的域名是通过 <strong>阿里云</strong> 注册的，阿里云信息如下：</p>
+<p>域名注册服务商名称：阿里云计算有限公司（原万网）</p>
+<p>域名注册服务商所属区域：浙江省杭州市余杭区</p>
+<p>域名注册服务商电话：95187</p>
+</li>
+<li>
+<p>办理公安备案的域名是通过 <strong>腾讯云</strong> 注册的，腾讯云信息如下：</p>
+<p>域名注册服务商名称：北京新网数码信息技术有限公司/烟台帝思普网络科技有限公司</p>
+<p>域名注册服务商所属区域：北京市市辖区大兴区/山东省烟台市开发区</p>
+</li>
+<li>
+<p>办理公安备案的域名是通过 <strong>华为云</strong> 注册的，华为云信息如下：</p>
+<p>域名注册服务商名称：北京新网数码信息技术有限公司</p>
+<p>域名注册服务商所属区域：北京市亦庄经济技术开发区地盛西路1号</p>
+<p>联系方式：400-818-2233</p>
+</li>
+<li>
+<p>办理公安备案的域名是通过 <strong>百度云</strong> 注册的，稍许复杂，请自行百度，或提交工单，让百度云客服帮助查询。</p>
+</li>
+</ul>
+</li>
+<li>
+<p><font size="3">初步材料审核后会要求到当地公安部网警大队进行 <strong>当面核验</strong>，一般需要准备 <strong><code>身份证</code></strong> 与 <strong><code>域名证书</code></strong> （<strong>原件与复印件</strong>）。 <strong><code>域名证书</code></strong> 可在 <code>控制台-我的域名</code> 中下载。</font></p>
+</li>
+</ol>
+<figure data-type="image" tabindex="3"><img src="https://my-images-1303836580.cos.ap-beijing.myqcloud.com/202210011337895.png" alt="image-20221001133718760" loading="lazy"></figure>
+<br>
+<ol start="7">
+<li>
+<p><font size="3">如果你的网站提供交互式服务，当面核验之后会通过邮件发送“交互式服务”相关表格，其中 <strong><code>《交互式服务安全检查表》</code></strong> 非常麻烦。个人网站有很多条可以填不适用，也能通过，注意一定要真实填写。</font></p>
+ <p class="warn"> 提供什么交互式服务，就有相应的表格填写。文末附我的 <b> *博客个人空间服务企业基础信息登记表 样版.xls </b> 和 <b>*交互式服务安全检查表 样版.xls </b>，仅供参考。</p>
+</li>
+</ol>
+<figure data-type="image" tabindex="4"><img src="https://my-images-1303836580.cos.ap-beijing.myqcloud.com/202210011607324.png" alt="image-20221001160753213" loading="lazy"></figure>
+<br>
+<ol>
+<li><font size="3">最后有可能需要进行 <strong>实地检查</strong>，配合网警工作即可，一般不会刻意为难。</font></li>
+<li><font size="3">备案通过之后30天内，需将备案编号与备案图标放置在网页底部。</font></li>
+</ol>
+<br>
+<p><font size="3">附：<strong>备案编号Html代码</strong></font></p>
+<pre><code class="language-html">&lt;div style=&quot;width:300px;margin:0 auto; padding:20px 0;&quot;&gt;
+	&lt;a target=&quot;_blank&quot; href=&quot;http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44051302000163&quot; style=&quot;display:inline-block;text-decoration:none;height:20px;line-height:20px;&quot;&gt;
+     &lt;img src=&quot;备案图标.png&quot; style=&quot;float:left;&quot;/&gt;&lt;p style=&quot;float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;&quot;&gt;改为你的公安联网备案号&lt;/p&gt;
+    &lt;/a&gt;
+&lt;/div&gt;
+		 
+</code></pre>
+<br>
+<h2 id="相关资料">相关资料</h2>
+<ol>
+<li><a href="http://kedaoyun.azad.asia/#s/8juWx9xQ">互联网站安全服务平台操作指南.doc</a></li>
+<li><a href="http://kedaoyun.azad.asia/#s/8juXK5Gg">全国公安机关互联网站安全服务平台备案操作指南.docx</a></li>
+<li><a href="http://kedaoyun.azad.asia/#s/8jubSabA">交互式服务安全检查表 Azad_样板.xls</a></li>
+<li><a href="http://kedaoyun.azad.asia/#s/8jubz1KA">博客个人空间服务企业基础信息登记表 Azad_样板.xls</a></li>
+<li><a href="https://my-images-1303836580.cos.ap-beijing.myqcloud.com/%E5%A4%87%E6%A1%88%E5%9B%BE%E6%A0%87.png">公安部备案图标.png</a></li>
+</ol>
+<br>
+<p>最后，祝福祖国母亲繁荣昌盛❤❤❤！<img src="https://my-images-1303836580.cos.ap-beijing.myqcloud.com/202210011442384.png" style="zoom:25%;" /></p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>网站备案分为ICP备案和公安备案。 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>ICP备案（必需）：目的是为了防止在网上从事非法的网站经营活动，打击不良互联网信息的传播。未经ICP备案，不得在中华人民共和国境内从事非经营性互联网信息服务。对于没有备案的网站将予以罚款或关闭。 <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p>公安备案（依各地要求）：一般按照各地公安机关指定的地点和方式进行，主要是以登记为主。 <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[近日整活]]></title>
+        <id>https://Azad-sl.GitHub.io/jrzh/</id>
+        <link href="https://Azad-sl.GitHub.io/jrzh/">
+        </link>
+        <updated>2022-09-03T07:42:39.000Z</updated>
+        <content type="html"><![CDATA[<ol>
+<li><font size="3">65大洋薅了腾讯云的一年校园云服务器，没想到毕业两年了还能学生认证成功。
+<ul>
+<li>配置如图，有意者点击<a href="https://cloud.tencent.com/act/campus">腾讯云·校园云服务器</a></font></li>
+</ul>
+</li>
+</ol>
+<figure data-type="image" tabindex="1"><a href="https://www.hualigs.cn/image/63130f568e177.jpg"><img src="https://www.hualigs.cn/image/63130f568e177.jpg" alt="https://www.hualigs.cn/image/63130f568e177.jpg" loading="lazy"></a></figure>
+<BR>
+<ol start="2">
+<li><font size="3">4大洋买了<code>azad.asia</code>的一年域名（顺便绑定博客，等待备案中）。暂时不用裸奔了。</font><img src="https://www.hualigs.cn/image/63130667d99a9.jpg" alt="" loading="lazy"></li>
+</ol>
+<BR>
+<ol start="3">
+<li><font size="3">部署了个炫酷的云层动态导航页。</font></li>
+</ol>
+<p><a href="http://www.azad.asia/"><img src="https://img.shields.io/badge/漫步云端-azad?&colorB=0066cc&&logo=IBM Cloud" style="zoom:150%;" /></a></p>
+<BR>
+<ol start="4">
+<li><font size="3">将之前的<code>Alist</code>项目部署在服务器上，并换了套皮🤡。
+<ul>
+<li>详见<a href="http://azad.asia/alisthsk/">Alist+花生壳零成本搭建个人云盘网站</a>。新的地址：</font></li>
+</ul>
+</li>
+</ol>
+<p><a href="http://www.azad.asia:5244/"><img src="https://img.shields.io/badge/Azad - 个人云盘-Azad?&colorB=13AFF0&&logo=ArtStation" style="zoom:150%;" /></a></p>
+<BR>
+<ol start="5">
+<li><font size="3">部署了个在线音乐播放下载网站（不支持VIP歌曲播放下载）。
+<ul>
+<li>建议使用歌曲搜索（暂支持网易、酷狗）。</li>
+<li>支持下载、外链。</li>
+<li>播放列表网易云歌单同步测试中。 </font></li>
+</ul>
+</li>
+</ol>
+<p><a href="http://onlinemusic.azad.asia/"><img src="https://img.shields.io/badge/Azad - 在线音乐-Azad?&colorA=b6b6b6&colorB=626262&logo=Apple Music" style="zoom:150%;" /></a></p>
+<figure data-type="image" tabindex="2"><a href="https://www.hualigs.cn/image/63130d92bbf44.jpg"><img src="https://www.hualigs.cn/image/63130d92bbf44.jpg" alt="https://www.hualigs.cn/image/63130d92bbf44.jpg" loading="lazy"></a></figure>
+<BR>
+<ol start="6">
+<li><font size="3">在极客的路上痛并快乐着。</font></li>
+</ol>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[给网页添加live2D模型]]></title>
+        <id>https://Azad-sl.GitHub.io/Q4ry5L65P/</id>
+        <link href="https://Azad-sl.GitHub.io/Q4ry5L65P/">
+        </link>
+        <updated>2022-09-01T09:37:53.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="live2d简介">live2D简介</h2>
+<hr>
+<p class="tip">Live2D 是一种应用于电子游戏的绘图渲染技术，由日本 Cybernoids 公司开发。</p>
+<h3 id="工作原理">工作原理</h3>
+<p>Live2D Cubism 的工作原理是通过将一系列的 2D 图像进行平移、旋转和变形等操作，生成一个具有自然动画效果的可动人物模型。</p>
+<h3 id="看板娘">看板娘</h3>
+<p>live2D模型俗称“看板娘”，是一种职业和习惯称呼，也是ACGN次文化中的萌属性之一。一些网站、论坛、网络公司的代表形象、吉祥物被称作看板娘，一般可以看作吉祥物或网站、公司的拟人化的等同概念。</p>
+<p><strong>比如博客右下角的猫咪。</strong><br>
+<a href="https://www.hualigs.cn/image/631087ba9efba.jpg"><img src="https://www.hualigs.cn/image/631087ba9efba.jpg" alt="https://www.hualigs.cn/image/631087ba9efba.jpg" loading="lazy"></a></p>
+<BR>
+<p><strong>趴在碗里的小胖狗。</strong><br>
+<a href="https://www.hualigs.cn/image/63108899bec76.jpg"><img src="https://www.hualigs.cn/image/63108899bec76.jpg" alt="https://www.hualigs.cn/image/63108899bec76.jpg" loading="lazy"></a></p>
+<BR>
+<p><strong>当然更多的还是喜闻乐见的纸片人。</strong><br>
+<a href="https://www.hualigs.cn/image/6310895277c00.jpg"><img src="https://www.hualigs.cn/image/6310895277c00.jpg" alt="https://www.hualigs.cn/image/6310895277c00.jpg" loading="lazy"></a></p>
+<BR>
+<h2 id="网页代码实现">网页代码实现</h2>
+<hr>
+<p><strong>在博客上放置一个可爱的看板娘只需要在页面<code>&lt;body&gt;</code>后添加几行代码：</strong></p>
+<ol>
+<li><strong>引入 live2d 的 js：</strong></li>
+</ol>
+<pre><code class="language-html">&lt;script src=&quot;https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+<BR>
+<ol start="2">
+<li><strong>初始化 js ，加载模型：</strong></li>
+</ol>
+<pre><code class="language-html">&lt;script&gt;
+    L2Dwidget.init({
+        &quot;model&quot;: {
+           jsonPath: &quot;https://unpkg.com/live2d-widget-model-hijiki/assets/hijiki.model.json&quot;,
+            &quot;scale&quot;: 1
+        },
+        &quot;display&quot;: {
+            &quot;position&quot;: &quot;left&quot;,&lt;!--设置看板娘的上下左右位置--&gt;
+            &quot;width&quot;: 150,
+            &quot;height&quot;: 300,
+            &quot;hOffset&quot;: 0,
+            &quot;vOffset&quot;: -150
+        },
+        &quot;mobile&quot;: {
+            &quot;show&quot;: true,
+            &quot;scale&quot;: 0.5
+        },
+        &quot;react&quot;: {
+            &quot;opacityDefault&quot;: 0.9,&lt;!--设置透明度--&gt;
+            &quot;opacityOnHover&quot;: 0.2
+        }
+    });
+&lt;/script&gt;
+</code></pre>
+<BR>
+<p><strong>想要换成其他的模型，可以修改上面代码里 <code>jsonPath</code> 的路径，<code>jsonPath</code> 的路径格式为：</strong></p>
+<p>https://unpkg.com/live2d-widget-model-<span style="color:blue">模型名称</span>@1.0.5/assets/<span style="color:blue">模型名称</span>.model.json</p>
+<p><strong>复制替换蓝色字体即可。</strong></p>
+<p><strong># 几个常用的看板娘样式：</strong></p>
+<pre><code class="language-markdown">黑猫：https://unpkg.com/live2d-widget-model-hijiki@1.0.5/assets/hijiki.model.json
+萌娘：https://unpkg.com/live2d-widget-model-shizuku@1.0.5/assets/shizuku.model.json
+白猫：https://unpkg.com/live2d-widget-model-tororo@1.0.5/assets/tororo.model.json
+狗狗：https://unpkg.com/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json
+小可爱：https://unpkg.com/live2d-widget-model-z16@1.0.5/assets/z16.model.json
+小可爱：https://unpkg.com/live2d-widget-model-koharu@1.0.5/assets/koharu.model.json
+</code></pre>
+<p><strong># 其他可替换模型：</strong></p>
+<pre><code class="language-html">live2d-widget-model-chitose
+
+live2d-widget-model-epsilon2_1
+
+live2d-widget-model-gf
+
+live2d-widget-model-haru/01 (use npm install --save live2d-widget-model-haru)
+
+live2d-widget-model-haru/02 (use npm install --save live2d-widget-model-haru)
+
+live2d-widget-model-haruto
+
+live2d-widget-model-hibiki
+
+live2d-widget-model-hijiki
+
+live2d-widget-model-izumi
+
+live2d-widget-model-koharu
+
+live2d-widget-model-miku
+
+live2d-widget-model-ni-j
+
+live2d-widget-model-nico
+
+live2d-widget-model-nietzsche
+
+live2d-widget-model-nipsilon
+
+live2d-widget-model-nito
+
+live2d-widget-model-shizuku
+
+live2d-widget-model-tororo
+
+live2d-widget-model-tsumiki
+
+live2d-widget-model-unitychan
+
+live2d-widget-model-wanko
+
+live2d-widget-model-z16
+</code></pre>
+]]></content>
+    </entry>
+</feed>
